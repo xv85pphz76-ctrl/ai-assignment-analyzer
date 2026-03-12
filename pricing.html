@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing | AI Assignment Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <header class="account-header">
+    <div class="account-shell">
+      <nav class="assessment-nav">
+        <div class="nav-left">
+          <div id="avatar-slot" class="avatar-wrap"></div>
+          <a class="logo" href="./landing.html">
+            <span class="logo-mark">AA</span>
+            <span class="logo-text">AI Assignment Analyzer</span>
+          </a>
+        </div>
+        <div id="nav-auth" class="nav-auth"></div>
+      </nav>
+      <h1>Pricing</h1>
+      <p class="lead">Choose the plan that fits your study workflow.</p>
+    </div>
+  </header>
+
+  <main class="account-shell">
+    <section class="pricing-grid">
+      <div class="price-card">
+        <h3>Free Plan</h3>
+        <p class="price">£0</p>
+        <ul>
+          <li>1 analysis per month</li>
+          <li>Basic feedback</li>
+          <li>Question coverage</li>
+        </ul>
+        <a class="btn ghost" href="./dashboard.html">Start free</a>
+      </div>
+      <div class="price-card">
+        <h3>Starter Plan</h3>
+        <p class="price">£3.99 / month</p>
+        <ul>
+          <li>Unlimited analyses</li>
+          <li>Grade prediction</li>
+          <li>Rubric analysis</li>
+        </ul>
+        <a class="btn primary" href="./purchase.html?plan=starter">Choose Starter</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Pro Plan</h3>
+        <p class="price">£8.99 / month</p>
+        <ul>
+          <li>Advanced feedback</li>
+          <li>AI study assistant</li>
+          <li>Priority processing</li>
+        </ul>
+        <a class="btn primary" href="./purchase.html?plan=pro">Choose Pro</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true">
+    <aside class="drawer" role="dialog" aria-modal="true">
+      <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
+      <div class="drawer-header" id="drawer-header"></div>
+      <div class="drawer-links" id="drawer-links"></div>
+    </aside>
+  </div>
+
+  <script src="./landing-auth.js"></script>
+</body>
+</html>

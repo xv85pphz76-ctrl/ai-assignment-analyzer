@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up | Assessment Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-shell">
+      <a class="logo" href="./landing.html">
+        <span class="logo-mark">AC</span>
+        <span class="logo-text">Assessment Checker</span>
+      </a>
+      <div class="auth-card">
+        <h1>Create your account</h1>
+        <p class="hint">Save checks, track progress, and return anytime.</p>
+        <form id="signup-form" class="auth-form">
+          <input type="text" id="signup-name" placeholder="Name (optional)" />
+          <input type="email" id="signup-email" placeholder="Email" required />
+          <input type="password" id="signup-password" placeholder="Password" required />
+          <button class="btn primary" type="submit">Sign up</button>
+        </form>
+        <p id="auth-error" class="hint error"></p>
+        <p class="auth-switch">or <a href="./login.html">log in</a></p>
+      </div>
+    </div>
+  </main>
+  <script src="./auth.js"></script>
+</body>
+</html>

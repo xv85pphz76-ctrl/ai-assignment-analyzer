@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatbot Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Admin Dashboard</h1>
+      <p class="disclaimer">Basic analytics and unanswered questions.</p>
+      <div id="stats"></div>
+      <h2>Top Questions</h2>
+      <ul id="top"></ul>
+      <h2>Unanswered</h2>
+      <ul id="unanswered"></ul>
+      <button id="reindex" class="handoff">Reindex Sources</button>
+    </section>
+  </main>
+  <script>
+    async function load() {
+      const res = await fetch('/analytics');
+      const data = await res.json();
+      document.getElementById('stats').innerText = `Total chats: ${data.total_chats} | Handoff rate: ${data.handoff_rate}%`;
+      const top = document.getElementById('top');
+      top.innerHTML = '';
+      data.top_questions.forEach(q => {
+        const li = document.createElement('li');
+        li.textContent = `${q.question} (${q.c})`;
+        top.appendChild(li);
+      });
+      const un = document.getElementById('unanswered');
+      un.innerHTML = '';
+      data.unanswered.forEach(u => {
+        const li = document.createElement('li');
+        li.textContent = `${u.question} (${u.created_at})`;
+        un.appendChild(li);
+      });
+    }
+    document.getElementById('reindex').addEventListener('click', async () => {
+      await fetch('/reindex', { method: 'POST' });
+      await load();
+    });
+    load();
+  </script>
+</body>
+</html>

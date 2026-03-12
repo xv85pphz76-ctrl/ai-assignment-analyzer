@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assessment Checker | MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <header class="assessment-hero">
+    <div class="assessment-shell">
+      <nav class="assessment-nav">
+        <div class="nav-left">
+          <div id="avatar-slot" class="avatar-wrap"></div>
+          <a class="logo" href="./landing.html">
+            <span class="logo-mark">AC</span>
+            <span class="logo-text">Assessment Checker</span>
+          </a>
+        </div>
+        <div id="nav-auth" class="nav-auth"></div>
+      </nav>
+      <p class="eyebrow">Global student tool</p>
+      <h1>Assessment Checker</h1>
+      <p class="lead">Upload your assignment brief and draft to get missing requirements, structure balance, and next-step suggestions.</p>
+    </div>
+  </header>
+
+  <main class="assessment-shell">
+    <section class="assessment-grid">
+      <form id="assessment-form" class="assessment-card">
+        <h2>Upload your files</h2>
+        <p class="hint">Supported: PDF or TXT. You can also paste text below.</p>
+        <p class="hint" id="guest-hint">Guest access: 1 free check (sign up to save history).</p>
+
+        <label class="field">
+          <span>Assignment brief</span>
+          <input id="brief-file" type="file" accept=".pdf,.txt" />
+        </label>
+        <textarea id="brief-text" rows="6" placeholder="Paste assignment brief (optional)"></textarea>
+
+        <label class="field">
+          <span>Student draft</span>
+          <input id="draft-file" type="file" accept=".pdf,.txt" />
+        </label>
+        <textarea id="draft-text" rows="8" placeholder="Paste draft text (optional)"></textarea>
+
+        <button class="btn primary" type="submit">Check my assessment</button>
+        <p class="hint small">We do not store your files. Results appear below.</p>
+      </form>
+
+      <div class="assessment-card">
+        <h2>Insights</h2>
+        <div id="assessment-status" class="status">Upload files and run a check.</div>
+        <div id="assessment-result" class="result"></div>
+      </div>
+    </section>
+
+    <section class="assessment-history">
+      <div class="assessment-card">
+        <h2>Saved checks</h2>
+        <p class="hint">Your recent assessment checks will appear here.</p>
+        <div id="history-list" class="history-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true">
+    <aside class="drawer" role="dialog" aria-modal="true">
+      <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
+      <div class="drawer-header" id="drawer-header"></div>
+      <div class="drawer-links" id="drawer-links"></div>
+    </aside>
+  </div>
+
+  <script src="./assessment.js"></script>
+</body>
+</html>

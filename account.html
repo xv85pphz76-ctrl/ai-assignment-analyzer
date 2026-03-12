@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account | Assessment Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <header class="account-header">
+    <div class="account-shell">
+      <nav class="assessment-nav">
+        <div class="nav-left">
+          <div id="avatar-slot" class="avatar-wrap"></div>
+          <a class="logo" href="./landing.html">
+            <span class="logo-mark">AC</span>
+            <span class="logo-text">Assessment Checker</span>
+          </a>
+        </div>
+        <div id="nav-auth" class="nav-auth"></div>
+      </nav>
+      <h1>Account</h1>
+      <p class="lead">Manage your plan, billing, and saved checks.</p>
+    </div>
+  </header>
+
+  <main class="account-shell account-grid">
+    <section class="account-card">
+      <h2>Profile</h2>
+      <div id="profile-block" class="account-item"></div>
+    </section>
+
+    <section class="account-card">
+      <h2>Plan</h2>
+      <div class="account-item">
+        <p><strong>Current plan:</strong> <span id="plan-name">Free</span></p>
+        <p class="muted">Upgrade to Pro for unlimited checks.</p>
+        <a class="btn primary" href="./purchase.html?plan=pro">Upgrade to Pro</a>
+      </div>
+    </section>
+
+    <section class="account-card">
+      <h2>Billing</h2>
+      <div class="account-item">
+        <p>No payment method on file.</p>
+        <a class="btn ghost" href="./purchase.html?plan=pro">Add payment method</a>
+      </div>
+    </section>
+
+    <section class="account-card">
+      <h2>Saved checks</h2>
+      <div id="history-list" class="history-list"></div>
+    </section>
+  </main>
+
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true">
+    <aside class="drawer" role="dialog" aria-modal="true">
+      <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
+      <div class="drawer-header" id="drawer-header"></div>
+      <div class="drawer-links" id="drawer-links"></div>
+    </aside>
+  </div>
+
+  <script src="./account.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | AI Assignment Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">AA</span>
+        <div>
+          <strong>AI Assignment Analyzer</strong>
+          <p>Student dashboard</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <button data-section="overview" class="active">Dashboard</button>
+        <button data-section="new">New Assessment</button>
+        <button data-section="assessments">My Assessments</button>
+        <button data-section="insights">Insights</button>
+        <button data-section="grades">Grade Predictor</button>
+        <button data-section="rubric">Rubric Analysis</button>
+        <button data-section="assistant">AI Study Assistant</button>
+        <button data-section="templates">Templates</button>
+        <a href="./settings.html">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-top">
+        <div>
+          <h1 id="dashboard-title">Dashboard</h1>
+          <p id="dashboard-subtitle">Overview of your assignments and insights.</p>
+        </div>
+        <div class="top-actions">
+          <a class="btn ghost" href="./landing.html">Home</a>
+          <div id="nav-auth" class="nav-auth"></div>
+        </div>
+      </header>
+
+      <section id="section-overview" class="dash-section active">
+        <div class="widget-grid">
+          <div class="widget">
+            <h3>Assignments analyzed</h3>
+            <p id="metric-total">0</p>
+          </div>
+          <div class="widget">
+            <h3>Average predicted grade</h3>
+            <p id="metric-grade">-</p>
+          </div>
+          <div class="widget">
+            <h3>Common weaknesses</h3>
+            <ul id="metric-weakness"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-new" class="dash-section">
+        <div class="dashboard-card">
+          <h2>New Assessment</h2>
+          <p class="hint">Upload your assignment question and answer. Add a rubric for detailed scoring.</p>
+          <form id="assessment-form" class="auth-form">
+            <label>Assignment question</label>
+            <input type="file" id="question-file" accept=".pdf,.txt" />
+            <textarea id="question-text" rows="5" placeholder="Paste assignment question"></textarea>
+            <label>Assignment answer</label>
+            <input type="file" id="answer-file" accept=".pdf,.txt" />
+            <textarea id="answer-text" rows="8" placeholder="Paste your answer"></textarea>
+            <label>Rubric (optional)</label>
+            <input type="file" id="rubric-file" accept=".pdf,.txt" />
+            <textarea id="rubric-text" rows="5" placeholder="Paste rubric criteria"></textarea>
+            <button class="btn primary" type="submit">Analyze assignment</button>
+          </form>
+          <div id="analysis-status" class="status"></div>
+          <div id="analysis-result" class="result"></div>
+        </div>
+      </section>
+
+      <section id="section-assessments" class="dash-section">
+        <div class="dashboard-card">
+          <h2>My Assessments</h2>
+          <div id="history-list" class="history-list"></div>
+        </div>
+      </section>
+
+      <section id="section-insights" class="dash-section">
+        <div class="dashboard-card">
+          <h2>Insights</h2>
+          <div id="insight-list" class="history-list"></div>
+        </div>
+      </section>
+
+      <section id="section-grades" class="dash-section">
+        <div class="dashboard-card">
+          <h2>Grade Predictor</h2>
+          <p id="grade-predictor" class="lead">Upload an assignment to see estimated grades.</p>
+        </div>
+      </section>
+
+      <section id="section-rubric" class="dash-section">
+        <div class="dashboard-card">
+          <h2>Rubric Analysis</h2>
+          <div id="rubric-results" class="history-list"></div>
+        </div>
+      </section>
+
+      <section id="section-assistant" class="dash-section">
+        <div class="dashboard-card">
+          <h2>AI Study Assistant</h2>
+          <div id="assistant-chat" class="chat"></div>
+          <form id="assistant-form" class="composer">
+            <input id="assistant-input" type="text" placeholder="Ask how to improve your assignment" />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="section-templates" class="dash-section">
+        <div class="dashboard-card">
+          <h2>Templates</h2>
+          <div class="template-grid">
+            <div>
+              <h3>Essay structure</h3>
+              <p>Intro • Thesis • Evidence • Evaluation • Conclusion</p>
+            </div>
+            <div>
+              <h3>Critical analysis</h3>
+              <p>Claim • Evidence • Counter‑argument • Evaluation</p>
+            </div>
+            <div>
+              <h3>Literature review</h3>
+              <p>Theme clusters • Source comparison • Gaps</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>

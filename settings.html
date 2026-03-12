@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Settings | Assessment Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <header class="account-header">
+    <div class="account-shell">
+      <nav class="assessment-nav">
+        <div class="nav-left">
+          <div id="avatar-slot" class="avatar-wrap"></div>
+          <a class="logo" href="./landing.html">
+            <span class="logo-mark">AC</span>
+            <span class="logo-text">Assessment Checker</span>
+          </a>
+        </div>
+        <div id="nav-auth" class="nav-auth"></div>
+      </nav>
+      <h1>Settings</h1>
+      <p class="lead">Manage your profile, security, and preferences.</p>
+    </div>
+  </header>
+
+  <main class="account-shell account-grid">
+    <section class="account-card">
+      <h2>Profile</h2>
+      <form id="profile-form" class="auth-form">
+        <input type="text" id="profile-name" placeholder="Name" />
+        <input type="email" id="profile-email" placeholder="Email" />
+        <input type="password" id="profile-password" placeholder="Current password" required />
+        <button class="btn primary" type="submit">Save profile</button>
+      </form>
+      <p id="profile-message" class="hint"></p>
+    </section>
+
+    <section class="account-card">
+      <h2>Security</h2>
+      <form id="password-form" class="auth-form">
+        <input type="password" id="current-password" placeholder="Current password" required />
+        <input type="password" id="new-password" placeholder="New password" required />
+        <button class="btn ghost" type="submit">Change password</button>
+      </form>
+      <p id="password-message" class="hint"></p>
+    </section>
+
+    <section class="account-card">
+      <h2>Email preferences</h2>
+      <label class="checkbox-row">
+        <input type="checkbox" id="marketing-opt" />
+        Send product updates and tips
+      </label>
+      <button id="save-preferences" class="btn ghost" type="button">Save preferences</button>
+      <p id="pref-message" class="hint"></p>
+    </section>
+
+    <section class="account-card">
+      <h2>Data</h2>
+      <button id="export-data" class="btn ghost" type="button">Export my data</button>
+      <form id="delete-form" class="auth-form">
+        <input type="password" id="delete-password" placeholder="Current password" required />
+        <button class="btn danger" type="submit">Delete account</button>
+      </form>
+      <p id="delete-message" class="hint"></p>
+    </section>
+  </main>
+
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true">
+    <aside class="drawer" role="dialog" aria-modal="true">
+      <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
+      <div class="drawer-header" id="drawer-header"></div>
+      <div class="drawer-links" id="drawer-links"></div>
+    </aside>
+  </div>
+
+  <script src="./settings.js"></script>
+</body>
+</html>

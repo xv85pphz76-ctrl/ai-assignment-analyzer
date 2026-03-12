@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Assignment Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <header class="landing-hero">
+    <nav class="landing-nav">
+      <div class="nav-left">
+        <div id="avatar-slot" class="avatar-wrap"></div>
+        <div class="logo">
+          <span class="logo-mark">AA</span>
+          <span class="logo-text">AI Assignment Analyzer</span>
+        </div>
+      </div>
+      <div class="landing-links">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">How it works</button>
+          <div class="nav-dropdown">
+            <p>Upload your assignment question and answer to get structured feedback instantly.</p>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">Benefits</button>
+          <div class="nav-dropdown">
+            <ul>
+              <li>Find missing requirements fast</li>
+              <li>Improve structure and argument clarity</li>
+              <li>Boost grades with clear next steps</li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">Pricing</button>
+          <div class="nav-dropdown">
+            <p>Free: 1 analysis per month</p>
+            <p>Starter: £3.99 / month</p>
+            <p>Pro: £8.99 / month</p>
+            <a class="pricing-link" id="pricing-link" href="./pricing.html">View plans</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button">FAQ</button>
+          <div class="nav-dropdown">
+            <p>Private analysis, no sharing with universities.</p>
+          </div>
+        </div>
+        <div id="nav-auth" class="nav-auth"></div>
+      </div>
+    </nav>
+
+    <div class="landing-hero-content">
+      <p class="eyebrow">For university students</p>
+      <h1>AI Assignment Analyzer</h1>
+      <p class="lead">Upload your assignment question and answer. Get instant insights on what your assessment is missing before submission.</p>
+      <div class="landing-actions">
+        <a class="btn primary" href="./dashboard.html">Start Free Analysis</a>
+        <a class="btn ghost" href="#example">View Example Report</a>
+      </div>
+      <div class="landing-trust">
+        <span>Global • Fast • No rewriting</span>
+        <span>Private by default</span>
+      </div>
+    </div>
+
+    <div class="landing-mockup" id="example">
+      <div class="mockup-card">
+        <p class="eyebrow">Example output</p>
+        <h3>Estimated Grade: 65%</h3>
+        <p><strong>Question Coverage</strong></p>
+        <ul>
+          <li>Definition: Covered</li>
+          <li>Explanation: Covered</li>
+          <li>Critical Evaluation: Weak</li>
+          <li>Examples: Missing</li>
+        </ul>
+        <p><strong>Weak Sections</strong></p>
+        <p>Paragraph 4 lacks academic evidence.</p>
+        <p><strong>Suggestions</strong></p>
+        <p>Add comparison between two academic sources and expand the conclusion.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="landing-section example-analysis">
+      <div class="section-header">
+        <p class="eyebrow">Example AI Analysis</p>
+        <h2>Example Assignment Analysis</h2>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-grid">
+          <div>
+            <h3>Estimated Grade</h3>
+            <p class="analysis-grade">64%</p>
+            <div class="progress">
+              <span style="width: 64%"></span>
+            </div>
+          </div>
+          <div>
+            <h3>Coverage of Question</h3>
+            <div class="analysis-list">
+              <div><span class="icon ok">✔</span>Definition included</div>
+              <div><span class="icon ok">✔</span>Explanation included</div>
+              <div><span class="icon warn">⚠</span>Critical evaluation weak</div>
+              <div><span class="icon bad">❌</span>Real-world examples missing</div>
+            </div>
+          </div>
+          <div>
+            <h3>Evidence Quality</h3>
+            <p>Sources detected: 4</p>
+            <p>Recommended: 8+</p>
+            <div class="progress subtle">
+              <span style="width: 50%"></span>
+            </div>
+          </div>
+          <div>
+            <h3>Suggestions</h3>
+            <div class="analysis-list">
+              <div>• Add comparison between two academic sources</div>
+              <div>• Expand evaluation section</div>
+              <div>• Improve conclusion clarity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="landing-section">
+      <div class="section-header">
+        <p class="eyebrow">How it works</p>
+        <h2>Simple steps to better grades.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <h3>1. Upload assignment question</h3>
+          <p>Paste text or upload your brief.</p>
+        </div>
+        <div class="step-card">
+          <h3>2. Upload your answer</h3>
+          <p>We parse structure and coverage.</p>
+        </div>
+        <div class="step-card">
+          <h3>3. AI evaluates your work</h3>
+          <p>Compare against question and rubric.</p>
+        </div>
+        <div class="step-card">
+          <h3>4. Receive structured feedback</h3>
+          <p>Missing points, weaknesses, and grade prediction.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section alt">
+      <div class="section-header">
+        <p class="eyebrow">Privacy</p>
+        <h2>Your assignments stay private.</h2>
+      </div>
+      <div class="benefit-grid">
+        <div>
+          <h3>Private by design</h3>
+          <p>Assignments are private and not shared with universities.</p>
+        </div>
+        <div>
+          <h3>Secure processing</h3>
+          <p>Files are processed securely and are not exposed publicly.</p>
+        </div>
+        <div>
+          <h3>Control your data</h3>
+          <p>Export or delete your data anytime.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">
+    <div>
+      <strong>AI Assignment Analyzer</strong>
+      <p>Helping students submit with confidence.</p>
+    </div>
+    <a href="./dashboard.html">Open the dashboard</a>
+  </footer>
+
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true">
+    <aside class="drawer" role="dialog" aria-modal="true">
+      <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
+      <div class="drawer-header" id="drawer-header"></div>
+      <div class="drawer-links" id="drawer-links"></div>
+    </aside>
+  </div>
+
+  <script src="./landing-nav.js"></script>
+  <script src="./landing-auth.js"></script>
+</body>
+</html>

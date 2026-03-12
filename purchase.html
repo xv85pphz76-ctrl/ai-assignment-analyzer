@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purchase | Assessment Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <main class="auth-page">
+    <div class="auth-shell">
+      <a class="logo" href="./landing.html">
+        <span class="logo-mark">AC</span>
+        <span class="logo-text">Assessment Checker</span>
+      </a>
+      <div class="auth-card">
+        <h1>Choose your plan</h1>
+        <p class="hint">This is a placeholder checkout page. Connect Stripe to accept payments.</p>
+        <div class="purchase-grid">
+          <button class="price-option" data-plan="free">Free · £0</button>
+          <button class="price-option" data-plan="pro">Pro · £4.99 / month</button>
+        </div>
+        <p id="purchase-message" class="hint"></p>
+      </div>
+    </div>
+  </main>
+  <script>
+    const message = document.getElementById("purchase-message");
+    const params = new URLSearchParams(window.location.search);
+    const preselect = params.get("plan");
+    if (preselect && message) {
+      message.textContent = `Selected: ${preselect}`;
+    }
+    document.querySelectorAll(".price-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const plan = btn.dataset.plan;
+        message.textContent = `Selected: ${plan}. Connect Stripe to complete purchase.`;
+      });
+    });
+  </script>
+</body>
+</html>

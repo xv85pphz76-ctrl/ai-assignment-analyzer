@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat QR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./widget.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Scan to Ask a Question</h1>
+      <p class="disclaimer">This QR code links to the student help chat.</p>
+      <div id="qr"></div>
+      <p id="link"></p>
+    </section>
+  </main>
+  <script>
+    const url = window.location.origin + '/';
+    const img = document.createElement('img');
+    img.alt = 'QR code';
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(url)}`;
+    document.getElementById('qr').appendChild(img);
+    const link = document.getElementById('link');
+    link.textContent = url;
+  </script>
+</body>
+</html>
